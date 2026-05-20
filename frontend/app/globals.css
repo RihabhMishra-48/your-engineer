@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: "JetBrains Mono", "Fira Code", monospace;
+  }
+}
+
+/* Custom premium scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Monaco editor integration fixes */
+.monaco-editor {
+  padding-top: 8px;
+}
+
+/* Custom keyframes for cinematic micro-animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.15);
+  }
+}
+
+.glow-card {
+  animation: pulseGlow 4s infinite ease-in-out;
+}
+
+/* Custom styling for react flow graph */
+.react-flow__background {
+  background-color: #09090b !important;
+}
+
+.react-flow__node {
+  border-radius: 6px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.2s ease-in-out;
+}
+
+.react-flow__node:hover {
+  transform: scale(1.03);
+}
+
+.react-flow__edge-path {
+  stroke-dasharray: 4;
+  animation: dash 30s linear infinite;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
